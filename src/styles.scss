@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+// logo
+.site-logo img {
+  display: block;
+  max-width: 198px;
+  height: auto;
+}
+
+// footer
+.footer {
+  margin-top: 8em;
+  padding-top: 8em;
+  position: relative;
+  z-index: 1;
+  background-color: #F7FAFD;
+
+  .copyright {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 4rem;
+    text-align: center;
+    border-top: 1px solid #d8ebfd;
+  }
+}
