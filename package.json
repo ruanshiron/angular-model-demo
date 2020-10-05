@@ -1,5 +1,5 @@
 {
-  "name": "first",
+  "name": "angular-model-demo",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -24,10 +24,6 @@
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-regular-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
-    "@fortawesome/pro-duotone-svg-icons": "^5.13.0",
-    "@fortawesome/pro-light-svg-icons": "^5.13.0",
-    "@fortawesome/pro-regular-svg-icons": "^5.13.0",
-    "@fortawesome/pro-solid-svg-icons": "^5.13.0",
     "bootstrap": "^4.5.2",
     "ng-zorro-antd": "^10.0.0",
     "rxjs": "~6.6.0",

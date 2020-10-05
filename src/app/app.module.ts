@@ -11,6 +11,7 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { vi_VN } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import vi from '@angular/common/locales/vi';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 registerLocaleData(vi);
 
@@ -24,7 +25,8 @@ registerLocaleData(vi);
     LayoutsModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FontAwesomeModule
   ],
   providers: [{ provide: NZ_I18N, useValue: vi_VN }],
   bootstrap: [AppComponent]
