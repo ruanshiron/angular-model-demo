@@ -2,7 +2,7 @@
 <section class="container" style="min-height: 580px; margin-bottom: 40px;">
   <div class="row h-100 justify-content-center align-items-center">
     <div class="col-lg-5">
-      <div>
+      <div class="py-5">
         <h1 class="ant-typography">ORC Legal Documents</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -26,79 +26,10 @@
   </div>
   <div class="row">
     <div class="col-lg-5">
-      <div class="ant-card ant-card-bordered ant-card-hoverable my-2" style="width: 100%;">
-        <div class="ant-card-body">
-          <div class="ant-card-meta">
-            <div class="ant-card-meta-detail">
-              <div class="ant-card-meta-title">
-                <h2 class="ant-typography"><span class="mr-2"><i class="fas fa-sign-out-alt"></i></span>INPUT</h2>
-              </div>
-              <button type="button" class="ant-btn ant-btn-dashed ant-btn-block">
-                <span class="mr-2"><i class="fas fa-plus"></i></span><span> Upload</span>
-              </button>
-
-              <div class="ant-card-meta-description mt-2">Or add image URL</div>
-              <input placeholder="Basic usage" type="text" class="ant-input" value="">
-
-              <div class="ant-card-meta-description mt-2">Use our sample</div>
-              <div class="d-flex justify-content-center">
-                <div class="sample-demo-block"></div>
-                <div class="sample-demo-block"></div>
-                <div class="sample-demo-block"></div>
-              </div>
-              <div class="image-view"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <app-input-area></app-input-area>
     </div>
     <div class="col-lg-7">
-      <div class="ant-card ant-card-bordered ant-card-hoverable my-2" style="width: 100%;">
-        <div class="ant-card-body">
-          <div class="ant-card-meta">
-            <div class="ant-card-meta-detail">
-              <div class="ant-card-meta-title">
-                <h2 class="ant-typography"><span class="mr-2"><i class="fas fa-sign-out-alt"></i></span>OUTPUT</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="ant-table-wrapper">
-          <div class="ant-spin-nested-loading">
-            <div class="ant-spin-container">
-              <div class="ant-table">
-                <div class="ant-table-container">
-                  <div class="ant-table-content">
-                    <table style="table-layout: auto;">
-                      <colgroup></colgroup>
-                      <thead class="ant-table-thead">
-                        <tr>
-                          <th class="ant-table-cell">Name</th>
-                          <th class="ant-table-cell">Content</th>
-                        </tr>
-                      </thead>
-                      <tbody class="ant-table-tbody">
-                        <tr data-row-key="1" class="ant-table-row ant-table-row-level-0">
-                          <td class="ant-table-cell"><a>John Brown</a></td>
-                          <td class="ant-table-cell">New York No. 1 Lake Park</td>
-                        </tr>
-                        <tr data-row-key="2" class="ant-table-row ant-table-row-level-0">
-                          <td class="ant-table-cell"><a>Jim Green</a></td>
-                          <td class="ant-table-cell">London No. 1 Lake Park</td>
-                        </tr>
-                        <tr data-row-key="3" class="ant-table-row ant-table-row-level-0">
-                          <td class="ant-table-cell"><a>Joe Black</a></td>
-                          <td class="ant-table-cell">Sidney No. 1 Lake Park</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <app-onput-area></app-onput-area>
     </div>
   </div>
 </section>
