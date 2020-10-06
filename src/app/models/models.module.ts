@@ -8,12 +8,11 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { InputAreaComponent } from './components/input-area/input-area.component';
-import { OnputAreaComponent } from './components/onput-area/onput-area.component';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { FormsModule } from '@angular/forms';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { ModelService } from '../core/model.service';
 
 
 
@@ -21,7 +20,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 
 
 @NgModule({
-  declarations: [ModelComponent, InputAreaComponent, OnputAreaComponent],
+  declarations: [ModelComponent],
   imports: [
     CommonModule,
     ModelsRoutingModule,
@@ -34,6 +33,9 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
     FormsModule,
     NzIconModule,
     NzDividerModule
+  ],
+  providers: [
+    ModelService
   ]
 })
 export class ModelsModule { }

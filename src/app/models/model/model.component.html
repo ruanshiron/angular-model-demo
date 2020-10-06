@@ -20,16 +20,53 @@
 <!-- start area end -->
 
 <!-- demo begin -->
-<section id="demo-it"  class="container">
+<section id="demo-it" class="container">
   <div>
     <h1 class="ant-typography">Try it now</h1>
   </div>
   <div class="row">
-    <div class="col-lg-5">
-      <app-input-area></app-input-area>
+    <div class="col-lg-6">
+      <nz-card style="width: 100%; height: 100%; margin-top: 1em;" nzHoverable>
+        <h2 nz-typography>INPUT</h2>
+        <button nz-button nzType="dashed" nzBlock (click)="upload()">Upload</button>
+        <div class="ant-card-meta-description mt-2">Or add image URL</div>
+        <nz-input-group [nzSuffix]="inputClearTpl">
+          <input type="text" nz-input [(ngModel)]="inputValue" placeholder="input with clear icon" />
+        </nz-input-group>
+        <ng-template #inputClearTpl>
+          <i nz-icon class="ant-input-clear-icon" nzTheme="fill" nzType="close-circle" *ngIf="inputValue"
+            (click)="inputValue = null"></i>
+        </ng-template>
+        <div class="ant-card-meta-description mt-2">Use our example</div>
+        <div class="d-flex justify-content-center">
+          <div class="sample-demo-block"></div>
+          <div class="sample-demo-block"></div>
+          <div class="sample-demo-block"></div>
+        </div>
+        <div class="image-view"></div>
+      </nz-card>
+
     </div>
-    <div class="col-lg-7">
-      <app-onput-area></app-onput-area>
+    <div class="col-lg-6">
+      <div class="ant-card ant-card-bordered ant-card-hoverable" style="width: 100%; height: 100%; margin-top: 1em;">
+        <div class="ant-card-body">
+          <h2 nz-typography>OUTPUT</h2>
+        </div>
+        <nz-table nzFrontPagination="false" #basicTable [nzData]="listOfData">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of basicTable.data">
+              <td>{{ data.name }}</td>
+              <td>{{ data.value }}</td>
+            </tr>
+          </tbody>
+        </nz-table>
+      </div>
     </div>
   </div>
 </section>
