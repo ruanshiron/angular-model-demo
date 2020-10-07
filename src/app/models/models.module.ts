@@ -13,6 +13,10 @@ import { FormsModule } from '@angular/forms';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { ModelService } from '../core/model.service';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { NzMessageModule } from 'ng-zorro-antd/message';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 
 
 
@@ -32,7 +36,11 @@ import { ModelService } from '../core/model.service';
     NzTypographyModule,
     FormsModule,
     NzIconModule,
-    NzDividerModule
+    NzDividerModule,
+    NzUploadModule,
+    NzMessageModule,
+    PdfViewerModule,
+    NzToolTipModule
   ],
   providers: [
     ModelService

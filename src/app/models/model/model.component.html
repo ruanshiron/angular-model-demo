@@ -26,9 +26,15 @@
   </div>
   <div class="row">
     <div class="col-lg-6">
-      <nz-card style="width: 100%; height: 100%; margin-top: 1em;" nzHoverable>
+      <nz-card style="width: 100%; height: 100%; margin-top: 1em;">
         <h2 nz-typography>INPUT</h2>
-        <button nz-button nzType="dashed" nzBlock (click)="upload()">Upload</button>
+        <div class="clearfix">
+          <nz-upload nz-tooltip nzTooltipTitle="PDF require" nzAction="{{apiUrl}}" (nzChange)="upload($event)" [nzLimit]="1"
+            [nzShowUploadList]="{ showPreviewIcon: true, showRemoveIcon: false, showDownloadIcon: false }"
+            [nzFileList]="fileList" [nzFileType]="'application/pdf'">
+            <button nz-button nzType="dashed" nzBlock>Upload</button>
+          </nz-upload>
+        </div>
         <div class="ant-card-meta-description mt-2">Or add image URL</div>
         <nz-input-group [nzSuffix]="inputClearTpl">
           <input type="text" nz-input [(ngModel)]="inputValue" placeholder="input with clear icon" />
@@ -38,21 +44,25 @@
             (click)="inputValue = null"></i>
         </ng-template>
         <div class="ant-card-meta-description mt-2">Use our example</div>
-        <div class="d-flex justify-content-center">
-          <div class="sample-demo-block"></div>
+        <div class="d-flex justify-content-left">
+          <div class="sample-demo-block--first"></div>
           <div class="sample-demo-block"></div>
           <div class="sample-demo-block"></div>
         </div>
-        <div class="image-view"></div>
+        <div class="image-view">
+          <pdf-viewer *ngIf="previewSrc" [src]="previewSrc" [original-size]="false" [zoom-scale]="'page-width'">
+          </pdf-viewer>
+        </div>
       </nz-card>
 
     </div>
     <div class="col-lg-6">
-      <div class="ant-card ant-card-bordered ant-card-hoverable" style="width: 100%; height: 100%; margin-top: 1em;">
+      <div class="ant-card ant-card-bordered" style="width: 100%; height: 100%; margin-top: 1em;">
         <div class="ant-card-body">
           <h2 nz-typography>OUTPUT</h2>
         </div>
-        <nz-table nzFrontPagination="false" #basicTable [nzData]="listOfData">
+        <nz-table style="height: 100%;" [nzLoading]="loading" nzFrontPagination="false" #basicTable
+          [nzData]="listOfData">
           <thead>
             <tr>
               <th>Name</th>
