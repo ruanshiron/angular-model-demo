@@ -32,7 +32,7 @@
           <nz-upload nz-tooltip nzTooltipTitle="PDF require" nzAction="{{apiUrl}}" (nzChange)="upload($event)" [nzLimit]="1"
             [nzShowUploadList]="{ showPreviewIcon: true, showRemoveIcon: false, showDownloadIcon: false }"
             [nzFileList]="fileList" [nzFileType]="'application/pdf'">
-            <button nz-button nzType="dashed" nzBlock>Upload</button>
+            <button nz-button nzType="dashed" nzBlock [disabled]="loading">Upload</button>
           </nz-upload>
         </div>
         <div class="ant-card-meta-description mt-2">Or add image URL</div>

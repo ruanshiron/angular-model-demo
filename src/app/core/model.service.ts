@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ModelService {
-  private url = "https://5f7c20b400bd74001690a464.mockapi.io/api/v1/model"
+  private url = "http://192.168.1.250:5000/process"
 
   constructor(private http: HttpClient) { }
 

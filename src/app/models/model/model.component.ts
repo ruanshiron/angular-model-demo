@@ -23,7 +23,7 @@ interface Result {
 })
 export class ModelComponent implements OnInit {
 
-  apiUrl: string = "https://run.mocky.io/v3/009b514a-9a3b-4115-85bc-46dea6a81dcc"
+  apiUrl: string = "http://192.168.1.250:9002/process"
 
   inputValue: string | null = null;
 
@@ -31,9 +31,11 @@ export class ModelComponent implements OnInit {
 
   fileList: NzUploadFile[] = []
 
-  loading = false
+  loading: boolean = false
 
   previewSrc: string = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf"
+
+  fileUploaded: any = null
 
   constructor(
     private modelService: ModelService,
@@ -44,8 +46,8 @@ export class ModelComponent implements OnInit {
   }
 
   upload(info: NzUploadChangeParam): void {
-    console.log(info);
-
+    if (this.fileUploaded?.uid !== info.file.uid)
+      this.setPreview(info.file.originFileObj);
     // output loading
     this.loading = true;
 
@@ -54,23 +56,18 @@ export class ModelComponent implements OnInit {
     fileList = fileList.length > 0 && fileList.slice(-1);
     this.fileList = fileList;
 
-    // let obj = res.result[0]
-    // let data = Object.keys(obj).map(key => ({ name: key, value: obj[key] }))
-    // this.listOfData = data
-
     if (info.file.status === 'done') {
       this.loading = false
 
       this.msg.success(`${info.file.name} file uploaded successfully`);
 
-      this.setPreview(info.file.originFileObj);
-
-      console.log(info.file.response)
       let obj = info.file.response.result[0]
       let data = Object.keys(obj).map(key => ({ name: key, value: obj[key] }))
       this.listOfData = data
 
     } else if (info.file.status === 'error') {
+      this.loading = false
+
       this.msg.error(`${info.file.name} file upload failed.`);
     }
   }
