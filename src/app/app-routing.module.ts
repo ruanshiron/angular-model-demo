@@ -18,7 +18,6 @@ const routes: Routes = [
     {
       scrollOffset: [0, 0],
       scrollPositionRestoration: 'top',
-      useHash: true,
       anchorScrolling: 'enabled'
     }
   )],
