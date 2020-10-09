@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ModelService } from 'src/app/core/model.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzUploadChangeParam, NzUploadFile } from 'ng-zorro-antd/upload';
 
@@ -77,10 +76,10 @@ const demo_samples: Sample[] = [
 
 @Component({
   selector: 'app-model',
-  templateUrl: './model.component.html',
-  styleUrls: ['./model.component.scss']
+  templateUrl: './orc.component.html',
+  styleUrls: ['./orc.component.scss']
 })
-export class ModelComponent implements OnInit {
+export class OrcComponent implements OnInit {
 
   apiUrl: string = "http://192.168.1.250:9002/process"
 

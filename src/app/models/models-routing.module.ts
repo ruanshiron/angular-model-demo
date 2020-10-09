@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ModelComponent } from './model/model.component';
+import { OrcComponent } from './orc/orc.component';
 
 const routes: Routes = [
-  { path: ':id', component: ModelComponent }
+  { path: 'orc', component: OrcComponent }
 ];
 
 @NgModule({

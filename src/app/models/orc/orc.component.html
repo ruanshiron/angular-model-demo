@@ -3,13 +3,12 @@
   <div class="row h-100 justify-content-center align-items-center">
     <div class="col-lg-5">
       <div class="py-5">
-        <h1 class="ant-typography">ORC Legal Documents</h1>
+        <h1 class="ant-typography">OCR Legal Documents</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-          ea commodo consequat.
+          📃 Bộ nhận diện các văn bản hành chính. Hỗ trợ việc phân loại các văn bản theo Tiêu đề, Vị trí, Độ bảo
+          mật,...
         </p>
-        <a class="ant-btn ant-btn-primary ant-btn-lg shadow-lg" href="/models/0#demo-it">Try Demo</a>
+        <a class="ant-btn ant-btn-primary ant-btn-lg shadow-lg" href="/models/orc#demo-it">Dùng thử</a>
       </div>
     </div>
     <div class="col-lg-7 pt-4">
@@ -20,22 +19,23 @@
 <!-- start area end -->
 
 <!-- demo begin -->
-<section id="demo-it" class="container">
+<section id="demo-it" class="container pt-2">
   <div>
-    <h1 class="ant-typography">Try it now</h1>
+    <h1 class="ant-typography">Chạy thử ngay</h1>
   </div>
   <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-6 py-2">
       <nz-card style="width: 100%; height: 100%; margin-top: 1em;">
-        <h2 nz-typography>INPUT</h2>
+        <h2 nz-typography>Đầu vào</h2>
         <div class="clearfix">
           <nz-upload nzAction="{{apiUrl}}" (nzChange)="upload($event)" [nzLimit]="1"
             [nzShowUploadList]="{ showPreviewIcon: true, showRemoveIcon: false, showDownloadIcon: false }"
             [nzFileList]="fileList" [nzFileType]="'application/pdf'">
-            <button nz-tooltip nzTooltipTitle="PDF require" nz-button nzType="dashed" nzBlock [disabled]="loading">Upload</button>
+            <button nz-tooltip nzTooltipTitle="PDF require" nz-button nzType="dashed" nzBlock
+              [disabled]="loading">Tải lên</button>
           </nz-upload>
         </div>
-        <div class="ant-card-meta-description mt-2">Or use our example</div>
+        <div class="ant-card-meta-description mt-2">Hoặc xem ví dụ của chúng tôi</div>
         <div class="d-flex justify-content-left" style="padding-left: 1px;">
           <div class="sample-demo-block" *ngFor="let sample of demo_samples" (click)="imageClickHandle(sample)">
             <img src="{{sample.thumnail}}">
@@ -49,17 +49,17 @@
       </nz-card>
 
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-6 py-2">
       <div class="ant-card ant-card-bordered" style="width: 100%; height: 100%; margin-top: 1em;">
         <div class="ant-card-body">
-          <h2 nz-typography>OUTPUT</h2>
+          <h2 nz-typography>Đầu ra</h2>
         </div>
         <nz-table style="height: 100%;" [nzLoading]="loading" nzFrontPagination="false" #basicTable
           [nzData]="listOfData">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Value</th>
+              <th>Tên</th>
+              <th>Nội dung</th>
             </tr>
           </thead>
           <tbody>

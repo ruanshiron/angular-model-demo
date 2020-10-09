@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ModelsRoutingModule } from './models-routing.module';
-import { ModelComponent } from './model/model.component';
+import { OrcComponent } from './orc/orc.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
@@ -24,7 +24,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 
 
 @NgModule({
-  declarations: [ModelComponent],
+  declarations: [OrcComponent],
   imports: [
     CommonModule,
     ModelsRoutingModule,
