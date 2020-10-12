@@ -4,15 +4,19 @@ import { CommonModule } from '@angular/common';
 import { PagesRoutingModule } from './pages-routing.module';
 import { HomeComponent } from './home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NgZorroAntdModule } from '../ng-zorro-antd.module';
+
 
 
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, PageNotFoundComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgZorroAntdModule
   ]
 })
 export class PagesModule { }
