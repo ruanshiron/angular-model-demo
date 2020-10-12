@@ -35,13 +35,13 @@ const demo_samples: Sample[] = [
     src: "/assets/pdf/demo_1.pdf",
     thumnail: "/assets/pdf/thumnail_1.png",
     field: {
-      date_doc: "Ngày tháng 1",
-      des_quote: "Mô tả",
-      name: "Tên",
-      num_doc: "Số hiệu",
-      organ_send: "Đơn vị",
-      secrete: "Độ bảo mật",
-      type_doc: "Loại văn bản"
+      date_doc: "Đồng Tháp, ngày 16 tháng 10 năm 2019",
+      des_quote: "Ban hành Quy định về chính sách hỗ trợ phát triểnngành nghề nông thôntrên địa bàn tỉnh Đồng Tháp",
+      name: "file",
+      num_doc: "25/2019/QĐ-UBND",
+      organ_send: "ỦY BAN NHÂN DÂN TỈNH ĐỒNG THÁP",
+      secrete: "Không",
+      type_doc: "Quyết Định"
     }
   },
   {
@@ -49,13 +49,13 @@ const demo_samples: Sample[] = [
     src: "/assets/pdf/demo_2.pdf",
     thumnail: "/assets/pdf/thumnail_2.png",
     field: {
-      date_doc: "Ngày tháng 2",
-      des_quote: "Mô tả",
-      name: "Tên",
-      num_doc: "Số hiệu",
-      organ_send: "Đơn vị",
-      secrete: "Độ bảo mật",
-      type_doc: "Loại văn bản"
+      date_doc: "Hà Nội, ngày 08 tháng 01 năm 2018",
+      des_quote: "Về việc công bố thủ tục hành chính được thay thế, thủ tục hành chính bị bãi bỏ trong lĩnh vực phổ biến giáo dục pháp luật thuộc phạm vi chức năng quản lý nhà nước của Bộ Tư Pháp",
+      name: "file",
+      num_doc: "40/QĐ-BTP",
+      organ_send: "BỘ TƯ PHÁP",
+      secrete: "Không",
+      type_doc: "Quyết Định"
     }
   },
   {
@@ -63,13 +63,13 @@ const demo_samples: Sample[] = [
     src: "/assets/pdf/demo_3.pdf",
     thumnail: "/assets/pdf/thumnail_3.png",
     field: {
-      date_doc: "Ngày tháng 3",
-      des_quote: "Mô tả",
-      name: "Tên",
-      num_doc: "Số hiệu",
-      organ_send: "Đơn vị",
-      secrete: "Độ bảo mật",
-      type_doc: "Loại văn bản"
+      date_doc: "Hà Nội, ngày 20 tháng 3 năm 2019",
+      des_quote: "Về điều chỉnh mức giá bán điện bình quân và quy định giá bán điện",
+      name: "file",
+      num_doc: "648/QĐ-BCT",
+      organ_send: "Bộ Công Thương",
+      secrete: "Không",
+      type_doc: "Quyết Định"
     }
   }
 ]
@@ -104,6 +104,9 @@ export class OrcComponent implements OnInit {
   }
 
   upload(info: NzUploadChangeParam): void {
+    //
+    this.demo_samples = this.demo_samples.map(s => ({ ...s, active: false }))
+
     if (this.fileUploaded?.uid !== info.file.uid)
       this.setPreview(info.file.originFileObj);
     // output loading
@@ -131,7 +134,7 @@ export class OrcComponent implements OnInit {
   }
 
   imageClickHandle(sample: Sample): void {
-    this.demo_samples = this.demo_samples.map(s => (s === sample ? {...s, active: true} : {...s, active: false}))
+    this.demo_samples = this.demo_samples.map(s => (s === sample ? { ...s, active: true } : { ...s, active: false }))
 
     this.previewSrc = sample.src
     this.listOfData = Object.keys(sample.field).map(key => ({ name: vn_field[key], value: sample.field[key] }))
